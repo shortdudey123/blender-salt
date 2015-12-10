@@ -1,0 +1,13 @@
+Metrics/AbcSize:
+  Description: >-
+                 A calculated magnitude based on number of assignments,
+                 branches, and conditions.
+  Reference: 'http://c2.com/cgi/wiki?AbcMetric'
+  Enabled: true
+  Max: 24
+
+Metrics/MethodLength:
+  Description: 'Avoid methods longer than 10 lines of code.'
+  StyleGuide: 'https://github.com/bbatsov/ruby-style-guide#short-methods'
+  Enabled: true
+  Max: 15
