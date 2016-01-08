@@ -34,6 +34,7 @@ Blender-salt uses the salt-api interface to remotely execute salt commands.  Thi
 - port (port that salt-api is listening on)
 - username (PAM user that can execute salt commands)
 - password (password for specified user)
+- ssl (connect to the salt-api via ssl)
 
 Example
 ```ruby

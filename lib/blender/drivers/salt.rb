@@ -24,17 +24,19 @@ module Blender
   module Driver
     # Salt driver for Blender
     class Salt < Base
-      attr_reader :concurrency
+      attr_reader :concurrency, :ssl
 
       def initialize(config = {})
         cfg = config.dup
         @concurrency = cfg.delete(:concurrency) || 1
+        @ssl = cfg.delete(:ssl) || false
         super(cfg)
       end
 
       def salt_call(command, host)
         responses = []
-        salt_server_url = "http://#{config[:host]}:#{config[:port]}"
+        http_scheme = @ssl ? 'https' : 'http'
+        salt_server_url = "#{http_scheme}://#{config[:host]}:#{config[:port]}"
         Log.debug("Invoking sall call '#{command.function}' with arguments "\
                   "'#{command.arguments}' against #{host}")
         Log.debug("Salt server address #{salt_server_url}")

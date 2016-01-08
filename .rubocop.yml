@@ -10,4 +10,4 @@ Metrics/MethodLength:
   Description: 'Avoid methods longer than 10 lines of code.'
   StyleGuide: 'https://github.com/bbatsov/ruby-style-guide#short-methods'
   Enabled: true
-  Max: 15
+  Max: 16
